@@ -27,8 +27,11 @@ Tenho me dedicado a implementação de soluções de monitoramento, automação 
 
 <br/>
 
-### ⚡ Atividade Recente
+### 📈 Métricas
 
 <div align="center">
-  <img src="https://github.com/FGaleti/FGaleti/raw/output/github-contribution-grid-snake-dark.svg" alt="Snake Animation" width="100%"/>
+  <img src="https://github.com/FGaleti/FGaleti/raw/main/profile-summary-card-output/tokyonight/0-profile-details.svg" alt="Profile Details" />
+  <br/>
+  <img src="https://github.com/FGaleti/FGaleti/raw/main/profile-summary-card-output/tokyonight/2-most-commit-language.svg" alt="Top Languages" height="170" />
+  <img src="https://github.com/FGaleti/FGaleti/raw/main/profile-summary-card-output/tokyonight/3-stats.svg" alt="Stats" height="170" />
 </div>
