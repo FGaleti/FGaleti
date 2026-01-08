@@ -27,20 +27,8 @@ Tenho me dedicado a implementação de soluções de monitoramento, automação 
 
 <br/>
 
-### 📊 Estatísticas
+### ⚡ Atividade Recente
 
 <div align="center">
-  <img 
-    align="center" 
-    src="https://github-readme-streak-stats.herokuapp.com/?user=FGaleti&theme=tokyonight&hide_border=true&date_format=j%20M%5B%20Y%5D" 
-    alt="GitHub Streak" 
-  />
-  
-  <br/><br/>
-
-  <img 
-    align="center" 
-    src="https://github-profile-trophy.vercel.app/?username=FGaleti&theme=tokyonight&no-frame=true&row=1&column=7&margin-w=15&margin-h=15" 
-    alt="Trophies" 
-  />
+  <img src="https://github.com/FGaleti/FGaleti/raw/output/github-contribution-grid-snake-dark.svg" alt="Snake Animation" width="100%"/>
 </div>
