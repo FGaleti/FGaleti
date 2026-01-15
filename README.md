@@ -1,6 +1,6 @@
 ## Felipe Galeti Gôngora
 
-**`Estudante de Engenharia de Software | Foco em Infraestrutura & Monitoramento`**
+**`Estudante de Engenharia de Software | Analista de Infraestrutura & Monitoramento`**
 
 Sou estudante de Engenharia de Software na UniCesumar e um profissional apaixonado por tecnologia em constante evolução. Atualmente, direciono meus estudos e prática para a área de **Infraestrutura e DevOps**.
 
