@@ -1,14 +1,14 @@
 ## Felipe Galeti Gôngora
 
-**`Estudante de Engenharia de Software | Analista de Infraestrutura & Monitoramento`**
+**`Software Engineering Student | Infrastructure & Monitoring Analyst`**
 
-Sou estudante de Engenharia de Software na UniCesumar e um profissional apaixonado por tecnologia em constante evolução. Atualmente, direciono meus estudos e prática para a área de **Infraestrutura e DevOps**.
+I am a Software Engineering student at UniCesumar and a professional passionate about ever-evolving technology. Currently, I am focusing my studies and practice on **Infrastructure and DevOps**.
 
-Tenho me dedicado a implementação de soluções de monitoramento, automação de tarefas via scripts e administração de sistemas. Busco oportunidades onde possa garantir a estabilidade de ambientes, aplicar boas práticas de segurança e dados (LGPD) e contribuir para a eficiência operacional da equipe.
+I have been dedicating myself to implementing monitoring solutions, scripting automation, and system administration. I am seeking opportunities where I can ensure environment stability, apply security and data protection best practices (LGPD), and contribute to the team's operational efficiency.
 
 ---
 
-### 🛠 Tecnologias e Ferramentas
+### 🛠 Technologies & Tools
 
 <div style="display: inline_block">
   <img align="center" alt="Zabbix" src="https://img.shields.io/badge/Zabbix-CC0000?style=for-the-badge&logo=zabbix&logoColor=white" />
@@ -27,7 +27,7 @@ Tenho me dedicado a implementação de soluções de monitoramento, automação 
 
 <br/>
 
-### 📈 Métricas
+### 📈 Metrics
 
 <div align="center">
   <img src="https://github.com/FGaleti/FGaleti/raw/main/profile-summary-card-output/tokyonight/0-profile-details.svg" alt="Profile Details" />
