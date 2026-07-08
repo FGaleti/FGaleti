@@ -8,7 +8,7 @@ I have been dedicating myself to implementing monitoring solutions, scripting au
 
 ---
 
-### 🛠 Technologies & Tools
+###  Technologies & Tools
 
 <div style="display: inline_block">
   <img align="center" alt="Zabbix" src="https://img.shields.io/badge/Zabbix-CC0000?style=for-the-badge&logo=zabbix&logoColor=white" />
@@ -27,7 +27,7 @@ I have been dedicating myself to implementing monitoring solutions, scripting au
 
 <br/>
 
-### 📈 Metrics
+###  Metrics
 
 <div align="center">
   <img src="https://github.com/FGaleti/FGaleti/raw/main/profile-summary-card-output/tokyonight/0-profile-details.svg" alt="Profile Details" />
