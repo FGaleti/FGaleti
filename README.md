@@ -33,8 +33,6 @@
 <p align="center">
   Software Engineering undergraduate at UniCesumar.
 </p>
----
-
 <h2 id="about-me">About Me</h2>
 
 I work at the intersection of **DevOps, Infrastructure, Observability, and
