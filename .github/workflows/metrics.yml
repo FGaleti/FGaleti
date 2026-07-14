@@ -1,0 +1,147 @@
+name: Update GitHub Profile Metrics
+
+on:
+  schedule:
+    # Executa todos os dias às 06:00 UTC.
+    - cron: "0 6 * * *"
+
+  workflow_dispatch:
+
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/metrics.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: github-profile-metrics
+  cancel-in-progress: true
+
+jobs:
+  generate-metrics:
+    name: Generate profile metrics
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Generate profile overview
+        uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: FGaleti
+          filename: metrics/profile-overview.svg
+
+          template: classic
+          config_timezone: America/Sao_Paulo
+          config_animations: true
+          config_padding: 5%
+          config_output: svg
+
+          base: header, activity, community, repositories, metadata
+          repositories_forks: false
+
+          plugin_achievements: true
+          plugin_achievements_display: compact
+          plugin_achievements_secrets: false
+          plugin_achievements_threshold: C
+
+      - name: Generate contribution calendar
+        uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: FGaleti
+          filename: metrics/contribution-calendar.svg
+
+          template: classic
+          config_timezone: America/Sao_Paulo
+          config_animations: true
+          config_padding: 5%
+          config_output: svg
+
+          base: ""
+          repositories_forks: false
+
+          plugin_isocalendar: true
+          plugin_isocalendar_duration: full-year
+
+      - name: Generate languages and activity habits
+        uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: FGaleti
+          filename: metrics/devops-languages.svg
+
+          template: classic
+          config_timezone: America/Sao_Paulo
+          config_animations: true
+          config_padding: 5%
+          config_output: svg
+
+          base: ""
+          repositories_forks: false
+
+          plugin_languages: true
+          plugin_languages_analysis_timeout: 15
+          plugin_languages_analysis_timeout_repositories: 7.5
+          plugin_languages_categories: programming, markup
+          plugin_languages_colors: github
+          plugin_languages_limit: 8
+          plugin_languages_recent_categories: programming, markup
+          plugin_languages_recent_days: 30
+          plugin_languages_recent_load: 500
+          plugin_languages_sections: most-used, recently-used
+          plugin_languages_threshold: 0%
+
+          plugin_habits: true
+          plugin_habits_charts: true
+          plugin_habits_days: 14
+          plugin_habits_facts: true
+          plugin_habits_from: 200
+          plugin_habits_trim: true
+
+      - name: Generate recent activity
+        uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: FGaleti
+          filename: metrics/recent-activity.svg
+
+          template: classic
+          config_timezone: America/Sao_Paulo
+          config_animations: true
+          config_padding: 5%
+          config_output: svg
+
+          base: ""
+          repositories_forks: false
+
+          plugin_activity: true
+          plugin_activity_days: 30
+          plugin_activity_filter: all
+          plugin_activity_limit: 8
+          plugin_activity_load: 300
+          plugin_activity_visibility: all
+
+      - name: Generate featured repositories
+        uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: FGaleti
+          filename: metrics/featured-repositories.svg
+
+          template: repository
+          config_timezone: America/Sao_Paulo
+          config_animations: true
+          config_padding: 5%
+          config_output: svg
+
+          base: ""
+          repositories_forks: false
+
+          plugin_repositories: true
+          plugin_repositories_featured: >-
+            FGaleti/Veeam-Backup-Replication-via-REST-API,
+            FGaleti/MONITORING_IBM_STORAGES_API,
+            FGaleti/SCRIPT_VEEAM_v12-v13
