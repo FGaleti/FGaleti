@@ -33,18 +33,6 @@
 <p align="center">
   Software Engineering undergraduate at UniCesumar.
 </p>
-
-<p align="center">
-  #about-meAbout Me</a> •
-  #areas-of-expertiseExpertise</a> •
-  #devops-workflowDevOps Workflow</a> •
-  #tech-stackTech Stack</a> •
-  #featured-projectsProjects</a> •
-  #devops-activityDevOps Activity</a> •
-  #certificationsCertifications</a> •
-  #contactContact</a>
-</p>
-
 ---
 
 <h2 id="about-me">About Me</h2>
