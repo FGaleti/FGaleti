@@ -434,7 +434,7 @@ monitoring, and infrastructure process orchestration.
     <td width="50%" valign="top">
       <h3>
         <a href="https://github.com/FGaleti/LiveSeo-DevOps">
-          LiveSeo DevOps
+          Prática DevOps
         </a>
       </h3>
       <p>
