@@ -1,63 +1,88 @@
 <h1 align="center">Felipe Galeti Gôngora</h1>
 
 <h3 align="center">
-  DevOps Engineer | Infrastructure & Observability Analyst
+  DevOps Engineer | Automation Pipelines, Kubernetes Operations & Cloud Environments
 </h3>
 
 <p align="center">
   <img
-    src="https://img.shields.io/badge/Focus-DevOps%20%26%20Observability-0A66C2?style=flat-square"
-    alt="DevOps and Observability"
+    src="https://img.shields.io/badge/Focus-DevOps%20%26%20SRE-0A66C2?style=flat-square"
+    alt="DevOps and SRE"
   />
   <img
-    src="https://img.shields.io/badge/Automation-APIs%20%26%20Scripting-6A1B9A?style=flat-square"
-    alt="Automation, APIs and Scripting"
+    src="https://img.shields.io/badge/Automation-Pipelines%20%26%20CI%2FCD-6A1B9A?style=flat-square"
+    alt="Automation Pipelines and CI/CD"
   />
   <img
-    src="https://img.shields.io/badge/Compliance-LGPD-2E7D32?style=flat-square"
-    alt="LGPD Compliance"
+    src="https://img.shields.io/badge/Kubernetes-Cluster%20Operations-326CE5?style=flat-square&logo=kubernetes&logoColor=white"
+    alt="Kubernetes Cluster Operations"
+  />
+  <img
+    src="https://img.shields.io/badge/Cloud-AWS%20%26%20Observability-FF9900?style=flat-square"
+    alt="Cloud and Observability"
   />
 </p>
 
 <p align="center">
-  DevOps and Infrastructure professional focused on observability, operational
-  automation, monitoring integrations, reliability, and continuous improvement
-  of critical environments.
+  DevOps Engineer focused on automation pipelines, Kubernetes cluster
+  operations and sustainment, cloud environments, and end-to-end
+  observability for production systems.
 </p>
 
 <p align="center">
-  I transform infrastructure data into actionable insights and repetitive
-  operational processes into reliable automations.
+  I turn fragile, manual deploys into automated pipelines with real
+  health checks, keep Kubernetes and cloud environments running reliably
+  day to day, and turn blind infrastructure into observable systems
+  with actionable alerts.
 </p>
 
 <p align="center">
   Software Engineering undergraduate at UniCesumar.
 </p>
+
 <h2 id="about-me">About Me</h2>
 
-I work at the intersection of **DevOps, Infrastructure, Observability, and
-Automation**, applying engineering practices to improve the availability,
-visibility, security, and operational efficiency of critical environments.
+I work as a **DevOps Engineer** on infrastructure and reliability, currently
+on the Development team at **liveSEO**, where I own everything from
+automation pipelines and Kubernetes cluster operations to cloud
+infrastructure, observability, and production incident response.
 
-My experience includes developing monitoring integrations, automating
-operational routines, supporting production environments, administering Linux,
-Windows, and AIX systems, integrating platforms through REST APIs, and building
-reusable monitoring solutions for Zabbix and Grafana.
+My day-to-day mixes **deployment automation** (blue/green rollouts with real
+health checks and automatic rollback), **Kubernetes and cloud environment
+sustainment** on AWS, **observability platform engineering** (Grafana
+Cloud stack: Loki, Mimir, Tempo, Alloy, and Grafana Faro for frontend RUM),
+and **hands-on root cause analysis** on hosts running Docker, Nginx, Redis,
+and Postgres in production.
 
-I also work with virtualized environments, backup infrastructure, relational
-databases, operational troubleshooting, alert standardization, capacity
-monitoring, and infrastructure process orchestration.
+I care about replacing manual, error-prone operational steps with pipelines
+and dashboards that fail loudly, roll back safely, and explain themselves,
+so incidents get caught by an alert instead of by a user.
 
 ### Main technical objectives
 
-- Increase the visibility and reliability of critical environments;
+- Ship deployments through automated pipelines with real health checks and rollback, not "green build, cross your fingers";
+- Operate and sustain Kubernetes clusters and cloud environments with reliability and cost-efficiency in mind;
+- Increase the visibility and reliability of critical production environments;
 - Automate repetitive and error-prone operational processes;
-- Reduce incident detection and resolution time;
-- Integrate infrastructure platforms through secure APIs;
+- Reduce incident detection and resolution time through observability and alerting;
+- Integrate infrastructure platforms through secure REST APIs;
 - Build reusable and maintainable monitoring solutions;
-- Apply version control and continuous improvement practices;
-- Support capacity planning through operational data;
+- Apply version control, RCA discipline, and continuous improvement practices to infrastructure;
 - Apply information security and LGPD principles to infrastructure processes.
+
+---
+
+<h2 id="recent-highlights">Recent DevOps Highlights: By the Numbers</h2>
+
+<p>A few things I've recently designed, built, or fixed in production and staging environments, with real impact behind each one:</p>
+
+- **Blue/green deployment pipeline with automated rollback:** designed and shipped a deployment pipeline for a containerized production API with real health checks, a bake-time validation window, and automatic rollback on failure. The winning slot is recreated and fully health-verified in **under 30 seconds**, and the mechanism was validated end-to-end in **both success and induced-failure scenarios** before going live.
+- **Observability cost & cardinality optimization:** audited a multi-host Grafana Cloud account running at **~79% of its metrics quota**, traced the overage to unnecessary system-level cAdvisor (cgroup) collection instead of real container metrics, and shipped a fix **projected to reclaim ~42% of the total quota**, without touching a single existing dashboard or alert.
+- **Grafana Cloud observability platform:** built and rolled out logs, metrics, and traces (Loki, Mimir, Tempo, Grafana Alloy) across **production/staging hosts** on AWS with auto-discovery dashboards and alert routing tuned to cut noisy, generic alerts, plus **Grafana Faro (RUM)** instrumentation for end-to-end frontend observability.
+- **Production Redis OOM root cause & fix:** root-caused a Redis container being killed by the OOM killer roughly **every 30 minutes**, tracing it to **~56,000 unbounded session keys (75–190 KB each, ~4.2 GB total)** with no memory ceiling; fixed with a persisted `maxmemory` configuration, stabilizing uptime with **zero data loss** on session data that couldn't be evicted.
+- **Distributed tracing rollout:** instrumented a Node.js/TypeScript service end-to-end with OpenTelemetry auto-instrumentation (app → Alloy → Grafana Cloud Tempo), including trace filtering to keep health-check noise out of the pipeline.
+- **CI/CD false-positive investigation:** diagnosed a deploy pipeline reporting a **green build in ~16 seconds on every run** while silently failing to update the running container in production, tracing it to a non-blocking remote command inside the deploy step.
+- **Container CPU root cause analysis:** root-caused a workload spiking to **~100% of a CPU core every 30 seconds** in a Celery/Airflow environment, tracing it to a container healthcheck reloading the entire application on every run, diagnosed with **zero changes** to the live environment.
 
 ---
 
@@ -66,29 +91,31 @@ monitoring, and infrastructure process orchestration.
 <table>
   <tr>
     <td width="50%" valign="top">
-      <h3>Observability & Monitoring</h3>
+      <h3>Automation Pipelines & Kubernetes/Cloud Ops</h3>
       <p>
-        Deployment and maintenance of monitoring solutions using Zabbix and
-        Grafana, including custom templates, dashboards, triggers, alerting,
-        capacity monitoring, and Low-Level Discovery.
+        Design and hardening of deployment pipelines (GitHub Actions,
+        container-based deploys), including blue/green rollouts, health
+        checks, bake-time validation, and automatic rollback, plus day-to-day
+        operation and sustainment of Kubernetes clusters and cloud (AWS)
+        environments.
       </p>
     </td>
     <td width="50%" valign="top">
-      <h3>Operational Automation</h3>
+      <h3>Observability & Monitoring</h3>
       <p>
-        Development of automation using Python, Shell Script, PowerShell,
-        REST APIs, and RunDeck to reduce manual operations and improve
-        process standardization.
+        Deployment and maintenance of monitoring solutions using Grafana Cloud
+        (Loki, Mimir, Tempo, Alloy) and Zabbix, including custom dashboards,
+        alerting, distributed tracing, and cardinality/cost optimization.
       </p>
     </td>
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <h3>Infrastructure Operations</h3>
+      <h3>Infrastructure Operations & RCA</h3>
       <p>
-        Administration and support of Linux, Windows, and AIX environments,
-        including troubleshooting, service analysis, remote management,
-        network operations, and production environment support.
+        Administration and troubleshooting of Linux, Windows, and AIX
+        environments (Docker, Nginx, Redis, and Postgres in production),
+        with a focus on root cause analysis over quick patches.
       </p>
     </td>
     <td width="50%" valign="top">
@@ -141,13 +168,13 @@ monitoring, and infrastructure process orchestration.
   />
   &nbsp;➜&nbsp;
   <img
-    src="https://img.shields.io/badge/Test-Validation-2E7D32?style=for-the-badge&logo=checkmarx&logoColor=white"
-    alt="Test and Validation"
+    src="https://img.shields.io/badge/Test-Health_Checks-2E7D32?style=for-the-badge&logo=checkmarx&logoColor=white"
+    alt="Test and Health Checks"
   />
   &nbsp;➜&nbsp;
   <img
-    src="https://img.shields.io/badge/Deploy-Automation-6A1B9A?style=for-the-badge"
-    alt="Automated Deployment"
+    src="https://img.shields.io/badge/Deploy-Blue%2FGreen-6A1B9A?style=for-the-badge"
+    alt="Blue-Green Deployment"
   />
   &nbsp;➜&nbsp;
   <img
@@ -159,7 +186,7 @@ monitoring, and infrastructure process orchestration.
 <p align="center">
   <strong>
     Automation as a standard. Observability as a foundation.
-    Continuous improvement as a culture.
+    Rollback as a safety net.
   </strong>
 </p>
 
@@ -167,13 +194,34 @@ monitoring, and infrastructure process orchestration.
 
 <h2 id="tech-stack">Tech Stack</h2>
 
-<h3>Observability & Monitoring</h3>
+<h3>CI/CD & Deployment</h3>
 
 <p>
   <img
-    alt="Zabbix"
-    src="https://img.shields.io/badge/Zabbix-CC0000?style=for-the-badge&logo=zabbix&logoColor=white"
+    alt="GitHub Actions"
+    src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white"
   />
+  <img
+    alt="Docker"
+    src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white"
+  />
+  <img
+    alt="Nginx"
+    src="https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white"
+  />
+  <img
+    alt="Amazon ECR"
+    src="https://img.shields.io/badge/Amazon_ECR-FF9900?style=for-the-badge&logo=amazonecs&logoColor=white"
+  />
+  <img
+    alt="SSH"
+    src="https://img.shields.io/badge/SSH-000000?style=for-the-badge&logo=gnubash&logoColor=white"
+  />
+</p>
+
+<h3>Observability & Monitoring</h3>
+
+<p>
   <img
     alt="Grafana"
     src="https://img.shields.io/badge/Grafana-F46800?style=for-the-badge&logo=grafana&logoColor=white"
@@ -193,6 +241,39 @@ monitoring, and infrastructure process orchestration.
   <img
     alt="Mimir"
     src="https://img.shields.io/badge/Mimir-FFA300?style=for-the-badge&logo=grafana&logoColor=white"
+  />
+  <img
+    alt="OpenTelemetry"
+    src="https://img.shields.io/badge/OpenTelemetry-000000?style=for-the-badge&logo=opentelemetry&logoColor=white"
+  />
+  <img
+    alt="Grafana Faro"
+    src="https://img.shields.io/badge/Grafana_Faro_(RUM)-F46800?style=for-the-badge&logo=grafana&logoColor=white"
+  />
+  <img
+    alt="Zabbix"
+    src="https://img.shields.io/badge/Zabbix-CC0000?style=for-the-badge&logo=zabbix&logoColor=white"
+  />
+</p>
+
+<h3>Infrastructure & Data Stores</h3>
+
+<p>
+  <img
+    alt="Redis"
+    src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white"
+  />
+  <img
+    alt="PostgreSQL"
+    src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white"
+  />
+  <img
+    alt="SQLite"
+    src="https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white"
+  />
+  <img
+    alt="Apache Airflow"
+    src="https://img.shields.io/badge/Apache_Airflow-017CEE?style=for-the-badge&logo=apacheairflow&logoColor=white"
   />
 </p>
 
@@ -241,10 +322,6 @@ monitoring, and infrastructure process orchestration.
     src="https://img.shields.io/badge/IBM_AIX-052FAD?style=for-the-badge&logo=ibm&logoColor=white"
   />
   <img
-    alt="SSH"
-    src="https://img.shields.io/badge/SSH-000000?style=for-the-badge&logo=gnubash&logoColor=white"
-  />
-  <img
     alt="RDP"
     src="https://img.shields.io/badge/RDP-0078D6?style=for-the-badge&logo=windows&logoColor=white"
   />
@@ -264,23 +341,6 @@ monitoring, and infrastructure process orchestration.
   <img
     alt="Veeam"
     src="https://img.shields.io/badge/Veeam-00B336?style=for-the-badge&logo=veeam&logoColor=white"
-  />
-</p>
-
-<h3>CI/CD & Version Control</h3>
-
-<p>
-  <img
-    alt="GitHub Actions"
-    src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white"
-  />
-  <img
-    alt="Git"
-    src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white"
-  />
-  <img
-    alt="GitHub"
-    src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"
   />
 </p>
 
@@ -331,20 +391,6 @@ monitoring, and infrastructure process orchestration.
   />
 </p>
 
-<h3>Data</h3>
-
-<p>
-  <img
-    alt="SQL"
-    src="https://img.shields.io/badge/SQL-4479A1?style=for-the-badge"
-   src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white"
-  />
-  <img
-    alt="SQLite"
-    src="https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white"
-  />
-</p>
-
 <h3>Security & Data Governance</h3>
 
 <p>
@@ -360,8 +406,8 @@ monitoring, and infrastructure process orchestration.
 
 > The technologies listed represent tools and platforms present in my
 > professional, academic, laboratory, or project experience. My primary
-> specialization is Infrastructure, Observability, Monitoring, and
-> Operational Automation.
+> specialization is Infrastructure, CI/CD, Observability, and Operational
+> Automation.
 
 ---
 
@@ -455,10 +501,17 @@ monitoring, and infrastructure process orchestration.
 </table>
 
 <p align="center">
-  <a href="https://github.com/FGaleti?tab=res
+  <a href="https://github.com/FGaleti?tab=repositories">
     <img
       src="https://img.shields.io/badge/View_All_Repositories-181717?style=for-the-badge&logo=github&logoColor=white"
-      alt="vops-activity">GitHub & DevOps Activity</h2>
+      alt="View all repositories"
+    />
+  </a>
+</p>
+
+---
+
+<h2 id="github-devops-activity">GitHub & DevOps Activity</h2>
 
 <p align="center">
   Dynamic overview of my technical contributions, repositories,
@@ -469,16 +522,31 @@ monitoring, and infrastructure process orchestration.
   <img
     src="https://raw.githubusercontent.com/FGaleti/FGaleti/main/metrics/profile-overview.svg?v=5"
     alt="GitHub profile overview"
-    widthlign="top">
-      <img
-        src="https://raw.githubusercontent.com/FGaleti/FGaleti/main/metrics/contribution-calendar.svg?v=5"
-        alt="GitHub contribution calendar"
-        width   src="https://raw.githubusercontent.com/FGaleti/FGaleti/main/metrics/devops-languages.svg?v=5"
-        alt="Most used languages"
-        width are updated automatically through GitHub Actions.
-  </sub>
+    width="49%"
+  />
 </p>
 
+<p align="center">
+  <img
+    src="https://raw.githubusercontent.com/FGaleti/FGaleti/main/metrics/contribution-calendar.svg?v=5"
+    alt="GitHub contribution calendar"
+    width="98%"
+  />
+</p>
+
+<p align="center">
+  <img
+    src="https://raw.githubusercontent.com/FGaleti/FGaleti/main/metrics/devops-languages.svg?v=5"
+    alt="Most used languages"
+    width="49%"
+  />
+</p>
+
+<p align="center">
+  <sub>Metrics are updated automatically through GitHub Actions.</sub>
+</p>
+
+---
 
 <h2 id="certifications">Certifications & Achievements</h2>
 
@@ -526,7 +594,8 @@ monitoring, and infrastructure process orchestration.
       alt="Email"
     />
   </a>
-  <a href="https://github.com/FG <img
+  <a href="https://github.com/FGaleti">
+    <img
       src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"
       alt="GitHub"
     />
@@ -542,5 +611,5 @@ monitoring, and infrastructure process orchestration.
 </p>
 
 <p align="center">
-  DevOps • Infrastructure • Observability • Automation • Reliability
+  DevOps • CI/CD • Observability • Automation • Reliability
 </p>
